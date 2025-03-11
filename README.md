@@ -26,8 +26,9 @@ My favourite orders and species in Aotearoa are:
 * Lepidoptera (Moths and Butterflies). My favourite species is the *Artona martini*, commonly known as the "Bamboo moth".
 * Hymenoptera (Bees, Wasps, Sawflies and Ants). My favourite species from this family is the *Bombus terrestris*, also known as the humble "Buff-tailed bumblebee".
 
-If I'm unsure about the species of bug I've caught, I usually use https://inaturalist.nz/ and search the spotted insects in the area. 
-For example, if I've found an insect in Albert Park but I'm not sure what it is - I can easily look up the insects spotted in Albert Park on iNaturalist (https://inaturalist.nz/check_lists/254525-Albert-Park-Check-List?iconic_taxon=47158)
+If I'm unsure about the species of bug I've caught, I usually use [iNaturalist](<https://inaturalist.nz/>) and search the spotted insects in the area. 
+For example, if I've found an insect in Albert Park but I'm not sure what it is - I can easily look up the insects spotted in [Albert Park](<https://inaturalist.nz/check_lists/254525-Albert-Park-Check-List?iconic_taxon=47158>).
+
 
 *Thanks for reading my rambling about bugs*
 
