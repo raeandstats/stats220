@@ -1,0 +1,96 @@
+---
+title: My dynamic report
+output: html_fragment
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE)
+
+```
+
+```{css}
+body {font-family: 'Times New Roman'; font-size: 14pt;
+color:darkred ; background-color:#ffebf2; padding:10px;
+}
+
+```
+
+##Average Interactions with Frankie
+
+Welcome to my dynamic report!
+Here, we will be assessing the behaviour of Frankie primarily given by how long I was away from home for. Important variables we may consider in this report include vocalisations, and the day of the week.
+```{r}
+library(tidyverse)
+library(magick)
+```
+
+![](frankdrawing.png)
+
+Artist: 
+
+
+```{r}
+#read in data
+logged_data <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vTY1_17h63gEhyLks2WSIrZcKlYU4aTjFpUQZQ_hH-kZAEO_m8lUwtBRUKYXC4LsQkn9yfUEAgQJt7H/pub?output=csv")
+
+#rename variables
+latest_data <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vTY1_17h63gEhyLks2WSIrZcKlYU4aTjFpUQZQ_hH-kZAEO_m8lUwtBRUKYXC4LsQkn9yfUEAgQJt7H/pub?output=csv") %>%
+  rename(vocality = 3,
+         interactions = 4,
+         hours_away = 5,
+         b_language = 6,
+         day = 7,
+         nvocal = 8,
+         tvocal = 9)
+#check
+glimpse(latest_data)
+
+```
+**Assessing Summary Statistics**
+```{r}
+mean(latest_data$interactions) %>% round(2)
+#1.48 (2DP)
+
+max(latest_data$interactions)
+#3 in one hour 
+
+sum(latest_data$interactions)
+#total number of interactions (not responses)
+
+
+```
+
+**Number of responses per day, and number of hours away**
+
+```{r}
+latest_data$day <- factor(latest_data$day, levels=c("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"))
+
+ggplot(data = latest_data) +
+  geom_bar(aes(x = day, fill = hours_away)) + 
+  labs(title = "Form activity per day", subtitle = "Comparing the number of responses per weekday and\n how long I was away from home for", caption = "Note each one response is not equal to one interaction", x = "Day of the week", y = "Response number")
+
+obsvs <- length(latest_data$interactions)
+
+
+paste("The total number of observations is", obsvs)
+
+```
+
+
+**Comparing vocalisations**
+```{r}
+ggplot(data=latest_data) +
+    geom_bar(aes(x=nvocal), fill = "darkred") +
+    labs(title="Number of Vocalisations", subtitle = "Comparing the number of vocalisations per response", caption = "Note each one response is not equal to one interaction.", x = "Number of vocalisatoins", y = "Count")
+
+v <- latest_data$vocality
+nv <- latest_data$nvocal
+max(nv)
+
+```
+
+
+
+
+
+![](https://c.tenor.com/-qBsG1HwR4oAAAAC/tenor.gif)
