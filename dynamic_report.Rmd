@@ -88,7 +88,7 @@ ggplot(data = latest_data) +
 ```{r}
 ggplot(data=latest_data) +
     geom_bar(aes(x=nvocal), fill = "darkred") +
-    labs(title="Number of Vocalisations", subtitle = "Comparing the number of vocalisations per response", caption = "Note each one response is not equal to one interaction.", x = "Number of vocalisatoins", y = "Count")
+    labs(title="Number of Vocalisations", subtitle = "Comparing the number of vocalisations per response", caption = "Note each one response is not equal to one interaction.", x = "Number of vocalisations", y = "Count")
 
 
 
