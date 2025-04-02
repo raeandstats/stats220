@@ -19,14 +19,14 @@ color:darkred ; background-color:#ffebf2; padding:10px;
 
 Welcome to my dynamic report!
 Here, we will be assessing the behaviour of Frankie primarily given by how long I was away from home for. Important variables we may consider in this report include vocalisations, and the day of the week.
+
+![](https://c.tenor.com/PpDtmuVnEXUAAAAC/tenor.gif)
+
 ```{r}
 library(tidyverse)
 library(magick)
 ```
 
-![](frankdrawing.png)
-
-Artist: 
 
 
 ```{r}
@@ -42,14 +42,13 @@ latest_data <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vTY1_17
          day = 7,
          nvocal = 8,
          tvocal = 9)
-#check
-glimpse(latest_data)
 
 ```
 **Assessing Summary Statistics**
 ```{r}
 mean(latest_data$interactions) %>% round(2)
 #1.48 (2DP)
+
 
 max(latest_data$interactions)
 #3 in one hour 
@@ -59,6 +58,8 @@ sum(latest_data$interactions)
 
 
 ```
+
+##Graphs
 
 **Number of responses per day, and number of hours away**
 
@@ -71,24 +72,38 @@ ggplot(data = latest_data) +
 
 obsvs <- length(latest_data$interactions)
 
-
 paste("The total number of observations is", obsvs)
 
 ```
 
 
 **Comparing vocalisations**
+
 ```{r}
 ggplot(data=latest_data) +
     geom_bar(aes(x=nvocal), fill = "darkred") +
     labs(title="Number of Vocalisations", subtitle = "Comparing the number of vocalisations per response", caption = "Note each one response is not equal to one interaction.", x = "Number of vocalisatoins", y = "Count")
 
-v <- latest_data$vocality
-nv <- latest_data$nvocal
-max(nv)
+
 
 ```
 
+##Dynamic Comments
+```{r}
+int <- latest_data$interactions
+obsvs <- length(int)
+tot <- sum(int)
+
+
+paste("The total number of observations is", obsvs, "compared to the total interactions, which is", tot)
+
+short <- min(int)
+long <- max(int)
+
+paste("The smallest number of interactions with Frankie for an observation is", short)
+paste("Whereas, the largest number of interactions with Frankie for an observation is", long)
+
+```
 
 
 
