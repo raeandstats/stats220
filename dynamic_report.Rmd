@@ -33,15 +33,14 @@ library(magick)
 #read in data
 logged_data <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vTY1_17h63gEhyLks2WSIrZcKlYU4aTjFpUQZQ_hH-kZAEO_m8lUwtBRUKYXC4LsQkn9yfUEAgQJt7H/pub?output=csv")
 
-#rename variables
+#renaming the data
 latest_data <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vTY1_17h63gEhyLks2WSIrZcKlYU4aTjFpUQZQ_hH-kZAEO_m8lUwtBRUKYXC4LsQkn9yfUEAgQJt7H/pub?output=csv") %>%
-  rename(vocality = 3,
-         interactions = 4,
-         hours_away = 5,
-         b_language = 6,
-         day = 7,
-         nvocal = 8,
-         tvocal = 9)
+  rename(interactions = 3,
+         hours_away = 4,
+         b_language = 5,
+         day = 6,
+         nvocal = 7,
+         tvocal = 8)
 
 ```
 ### **Assessing Summary Statistics**
