@@ -15,7 +15,7 @@ color:darkred ; background-color:#ffebf2; padding:10px;
 
 ```
 
-##Average Interactions with Frankie
+## Average Interactions with Frankie
 
 Welcome to my dynamic report!
 Here, we will be assessing the behaviour of Frankie primarily given by how long I was away from home for. Important variables we may consider in this report include vocalisations, and the day of the week.
@@ -44,7 +44,7 @@ latest_data <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vTY1_17
          tvocal = 9)
 
 ```
-**Assessing Summary Statistics**
+### **Assessing Summary Statistics**
 ```{r}
 mean(latest_data$interactions) %>% round(2)
 #1.48 (2DP)
@@ -59,7 +59,7 @@ sum(latest_data$interactions)
 
 ```
 
-##Graphs
+## Graphs
 
 **Number of responses per day, and number of hours away**
 
@@ -88,7 +88,7 @@ ggplot(data=latest_data) +
 
 ```
 
-##Dynamic Comments
+## Dynamic Comments
 ```{r}
 int <- latest_data$interactions
 obsvs <- length(int)
