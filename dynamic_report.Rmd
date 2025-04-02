@@ -45,6 +45,9 @@ latest_data <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vTY1_17
 
 ```
 ### **Assessing Summary Statistics**
+Mean interactions per response (2dp),
+Maximum interactions per response,
+Total number of interactions (not responses),
 ```{r}
 mean(latest_data$interactions) %>% round(2)
 #Mean interactions per response (2dp)
