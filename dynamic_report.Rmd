@@ -21,6 +21,7 @@ Welcome to my dynamic report!
 Here, we will be assessing the behaviour of Frankie primarily given by how long I was away from home for. Important variables we may consider in this report include vocalisations, and the day of the week.
 
 ![](https://c.tenor.com/PpDtmuVnEXUAAAAC/tenor.gif)
+![](frankdrawing.png)
 
 ```{r}
 library(tidyverse)
