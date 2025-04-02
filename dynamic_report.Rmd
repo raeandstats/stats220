@@ -47,14 +47,17 @@ latest_data <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vTY1_17
 ### **Assessing Summary Statistics**
 ```{r}
 mean(latest_data$interactions) %>% round(2)
+#Mean interactions per response (2dp)
 #1.48 (2DP)
 
 
 max(latest_data$interactions)
+#Maximum interactions per response
 #3 in one hour 
 
 sum(latest_data$interactions)
-#total number of interactions (not responses)
+#Total number of interactions (not responses)
+#31
 
 
 ```
@@ -70,9 +73,7 @@ ggplot(data = latest_data) +
   geom_bar(aes(x = day, fill = hours_away)) + 
   labs(title = "Form activity per day", subtitle = "Comparing the number of responses per weekday and\n how long I was away from home for", caption = "Note each one response is not equal to one interaction", x = "Day of the week", y = "Response number")
 
-obsvs <- length(latest_data$interactions)
 
-paste("The total number of observations is", obsvs)
 
 ```
 
