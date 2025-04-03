@@ -101,7 +101,7 @@ obsvs <- length(int)
 tot <- sum(int)
 
 
-paste0("The total number of observations is ", obsvs, ". ", "compared to the total interactions, which is ", tot, ".")
+paste0("The total number of observations is ", obsvs, ". ", "Compared to the total interactions, which is ", tot, ".")
 
 short <- min(int)
 long <- max(int)
