@@ -101,13 +101,13 @@ obsvs <- length(int)
 tot <- sum(int)
 
 
-paste("The total number of observations is", obsvs, "compared to the total interactions, which is", tot)
+paste0("The total number of observations is ", obsvs, ". ", "compared to the total interactions, which is ", tot, ".")
 
 short <- min(int)
 long <- max(int)
 
-paste("The smallest number of interactions with Frankie for an observation is", short)
-paste("Whereas, the largest number of interactions with Frankie for an observation is", long)
+paste0("The smallest number of interactions with Frankie for an observation is ", short, ".")
+paste0("Whereas, the largest number of interactions with Frankie for an observation is ", long, ".")
 
 ```
 
